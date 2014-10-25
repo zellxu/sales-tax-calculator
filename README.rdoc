@@ -1,0 +1,21 @@
+== Introduction
+This project is an application that will calculate tax for various types items defined in a problem set.
+
+== Getting Started
+1. Install Java from http://www.oracle.com/. A installer has been included in the lib folder.
+
+2. Install ant from http://ant.apache.org/. A binary has been included in the lib folder.
+
+3. Build the project with ant. A precompiled version is included in the main directory.
+
+4. Launch sales-tax-calculator.jar and follow the GUI.
+
+5. To add a item, type in a 'non-negative integer' for Quantity, choose a category, type in a 'non-negative number' for price and click add.
+
+6. To import input from a file, click the import from file button and choose a formatted '.txt' file. An example input file is included in the main directory. 
+
+== Sample Input
+The file exampleInput.txt is the example input file. Follow the format to create your own input file.
+
+== Running Test
+To run the JUnit tests, have ant installed and issue the commant 'ant test' from main directory. If you don't know how to do this, you probably shouldn't be testing anyway. That was a joke :) 

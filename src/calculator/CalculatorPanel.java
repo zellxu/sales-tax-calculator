@@ -18,14 +18,24 @@ import javax.swing.JPanel;
 import javax.swing.JTextField;
 import javax.swing.filechooser.FileNameExtensionFilter;
 
+/**
+ * Main GUI panel containing all subpanels. 
+ * @author Xiang
+ * @version 1.0
+ *
+ */
 public class CalculatorPanel extends JPanel {
+
 	private Calculator calculator;
 	private JLabel subtotalLabel,taxLabel,totalLabel;
 	private JTextField quantity, price;
 	private ItemListPanel itemListPanel;
 	private JComboBox<Item.Category> category;
 	private JFileChooser fc = new JFileChooser();
-	
+
+	/**
+	 * Creates a main panel that will contain all other subpanels.
+	 */
 	public CalculatorPanel() {
 		calculator = new Calculator();
 		fc = new JFileChooser(System.getProperty("user.dir"));
@@ -36,7 +46,7 @@ public class CalculatorPanel extends JPanel {
 		itemListPanel = new ItemListPanel(calculator);
 		this.add(itemListPanel);
 		this.add(Box.createRigidArea(new Dimension(20,0)));
-		
+
 		JLabel newItemLabel = new JLabel("Add New Item");
 		newItemLabel.setFont(new Font("Open Sans",Font.BOLD,20));
 		JLabel quantityLabel = new JLabel("Quantity : ");
@@ -59,10 +69,9 @@ public class CalculatorPanel extends JPanel {
 				addNewItem();
 			}
 		});
-		
+
 		//Top right panel group
 		JPanel actionPanel = new JPanel();
-		//actionPanel.setPreferredSize(new Dimension(300,300));
 		actionPanel.setLayout(new GridLayout(5,2,5,5));
 		actionPanel.add(newItemLabel);
 		actionPanel.add(new JLabel(""));
@@ -74,7 +83,7 @@ public class CalculatorPanel extends JPanel {
 		actionPanel.add(price);
 		actionPanel.add(importAdd);
 		actionPanel.add(add);
-		
+
 		subtotalLabel = new JLabel("Subtotal: "+calculator.getSubTotal());
 		taxLabel = new JLabel("Tax:        "+calculator.getTax());
 		totalLabel = new JLabel("Total:      "+(calculator.getTotal()));
@@ -88,7 +97,7 @@ public class CalculatorPanel extends JPanel {
 		sumPanel.add(Box.createRigidArea(new Dimension(0,25)));
 		sumPanel.add(totalLabel);
 		sumPanel.add(Box.createRigidArea(new Dimension(0,25)));
-		
+
 		//Right panel group
 		JPanel container = new JPanel();
 		container.setPreferredSize(new Dimension(350,500));
@@ -100,16 +109,18 @@ public class CalculatorPanel extends JPanel {
 		this.add(container);
 	}
 
+	/**
+	 * Handles the import feature. Check if inputs are valid and abort if not.
+	 */
 	private void importFromFile() {
-		System.out.println(Arrays.toString(Item.Category.values()));
 		int validate = fc.showOpenDialog(this);
 		if(validate==JFileChooser.APPROVE_OPTION) {
 			FileManager fm = new FileManager(fc.getSelectedFile());
-			if(!fm.validateFile()){
+			if(!fm.validateFile()) {
 				JOptionPane.showMessageDialog(this,"File format incorrect, require *.txt");
 				return;
 			}
-			if(!fm.validateInput()){
+			if(!fm.validateInput()) {
 				JOptionPane.showMessageDialog(this, fm.getError());
 				return;
 			}
@@ -119,7 +130,6 @@ public class CalculatorPanel extends JPanel {
 				return;
 			itemListPanel.addRows(fm.importFromFile(calculator));
 			updateLabel();
-			
 		}
 	}
 
@@ -148,14 +158,13 @@ public class CalculatorPanel extends JPanel {
 				JOptionPane.showMessageDialog(this,"Quantity and Price cannot be negative");
 				return;
 			}
-
 			Item i = new Item(quantity.getText(), ((Item.Category) category.getSelectedItem()), price.getText());
 			calculator.add(i);
 			itemListPanel.addRow(i);
 			updateLabel();
 		}
 	}
-	
+
 	/**
 	 * Update the tax and total information
 	 */

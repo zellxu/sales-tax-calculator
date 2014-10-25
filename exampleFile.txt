@@ -1,3 +1,7 @@
 1, book, 12.49
 1, music CD, 14.99
 1, chocolate bar, 0.85
+1, Imported box of chocolates, 0.0
+1, Imported bottle of perfume, 0.1
+1, Bottle of perfume, 0.5
+1, Headache pill,100
