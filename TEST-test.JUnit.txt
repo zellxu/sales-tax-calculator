@@ -1,0 +1,20 @@
+Testsuite: test.JUnit
+Tests run: 17, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.031 sec
+
+Testcase: calculatorTest01 took 0 sec
+Testcase: calculatorTest02 took 0.015 sec
+Testcase: calculatorTest03 took 0 sec
+Testcase: calculatorTest04 took 0 sec
+Testcase: calculatorTest05 took 0 sec
+Testcase: calculatorTest06 took 0 sec
+Testcase: calculatorTest07 took 0 sec
+Testcase: calculatorTest08 took 0 sec
+Testcase: calculatorTest09 took 0 sec
+Testcase: calculatorTest10 took 0 sec
+Testcase: itemTest01 took 0 sec
+Testcase: itemTest02 took 0 sec
+Testcase: itemTest03 took 0 sec
+Testcase: itemTest04 took 0 sec
+Testcase: itemTest05 took 0 sec
+Testcase: itemTest06 took 0 sec
+Testcase: itemTest07 took 0 sec

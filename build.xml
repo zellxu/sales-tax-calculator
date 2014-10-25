@@ -3,7 +3,7 @@
 	<property name="src.dir" location="src"/>
 	<property name="build.dir" location="build"/>
 	<property name="project_name" value="sales-tax-calculator"/>
-	<property name="main-class" value="calculator.Main"/>
+	<property name="main-class" value="calculator.Loader"/>
 
 	<path id="junit.class.path">
 		<pathelement location="lib/junit-4.11.jar" />
@@ -42,7 +42,7 @@
         <formatter type="plain" /> <!-- to file -->
 		<batchtest todir=".">
 			<fileset dir="${src.dir}">
-				<include name="**/*Junit*.java" />
+				<include name="**/*JUnit*.java" />
 			</fileset>
 		</batchtest>
 		</junit>
