@@ -1,3 +1,4 @@
+package calculator;
 import java.awt.Font;
 
 import javax.swing.JFrame;
@@ -6,7 +7,7 @@ import javax.swing.UIManager;
 
 
 public class Loader {
-	public static void main(String[] args){
+	public static void main(String[] args) {
 		setUIFont(new javax.swing.plaf.FontUIResource("Open Sans",Font.PLAIN,14));
 		JFrame frame = new JFrame("Sales Tax Calculator");
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -18,7 +19,7 @@ public class Loader {
 		frame.setVisible(true);
 	}
 	
-	public static void setUIFont (javax.swing.plaf.FontUIResource f){
+	public static void setUIFont (javax.swing.plaf.FontUIResource f) {
 	    java.util.Enumeration keys = UIManager.getDefaults().keys();
 	    while (keys.hasMoreElements()) {
 	      Object key = keys.nextElement();
